@@ -11,15 +11,15 @@ import { projects } from '../../data/projects'
 
 const videos = [
   {
-    title: 'AI Fashion Reel',
+    title: 'Motion Reels Revised',
     embed:
-      'https://player.vimeo.com/video/508394504',
+      'https://www.youtube.com/embed/AhiD7nPSn9g',
   },
 
   {
-    title: 'Luxury Product Animation',
+    title: 'RM Williams Video Vertical',
     embed:
-      'https://player.vimeo.com/video/389650510',
+      'https://www.youtube.com/embed/aj2sMoprPcI',
   },
 ]
 
