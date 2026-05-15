@@ -41,7 +41,6 @@ export default function Navbar() {
 
       <div className="mx-auto max-w-7xl">
 
-        {/* NAVBAR */}
         <motion.div
           whileHover={{
             scale: 1.01,
@@ -49,7 +48,22 @@ export default function Navbar() {
           transition={{
             duration: 0.4,
           }}
-          className="pointer-events-auto flex items-center justify-between rounded-full border border-white/10 bg-[#0B0B0B]/90 px-4 md:px-8 py-3 md:py-4 shadow-[0_10px_60px_rgba(0,0,0,0.45)]"
+          className="
+          relative
+          pointer-events-auto
+          flex
+          items-center
+          justify-between
+          rounded-full
+          border
+          border-white/10
+          bg-[#0B0B0B]/90
+          px-4
+          md:px-8
+          py-3
+          md:py-4
+          shadow-[0_10px_60px_rgba(0,0,0,0.45)]
+          "
         >
 
           {/* LOGO */}
@@ -93,41 +107,51 @@ export default function Navbar() {
 
           </Link>
 
+          {/* MENU DESKTOP */}
+          <nav
+            className="
+            hidden
+            md:flex
+            items-center
+            gap-8
+            absolute
+            left-1/2
+            -translate-x-1/2
+            "
+          >
+
+            {navItems.map((item) => {
+              const isActive = pathname === item.href
+
+              return (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className={`group relative text-sm font-bold tracking-[0.02em] transition-colors duration-300 ${
+                    isActive
+                      ? 'text-white'
+                      : 'text-white/70 hover:text-white'
+                  }`}
+                >
+
+                  {item.label}
+
+                  <span
+                    className={`absolute left-0 -bottom-2 h-[1px] bg-[#FF6B00] transition-all duration-300 ease-out ${
+                      isActive
+                        ? 'w-full'
+                        : 'w-0 group-hover:w-full'
+                    }`}
+                  />
+
+                </a>
+              )
+            })}
+
+          </nav>
+
           {/* RIGHT SIDE */}
           <div className="flex items-center gap-3">
-
-            {/* MENU DESKTOP */}
-            <nav className="hidden md:flex items-center gap-8">
-
-              {navItems.map((item) => {
-                const isActive = pathname === item.href
-
-                return (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    className={`group relative text-sm font-bold tracking-[0.02em] transition-colors duration-300 ${
-                      isActive
-                        ? 'text-white'
-                        : 'text-white/70 hover:text-white'
-                    }`}
-                  >
-
-                    {item.label}
-
-                    <span
-                      className={`absolute left-0 -bottom-2 h-[1px] bg-[#FF6B00] transition-all duration-300 ease-out ${
-                        isActive
-                          ? 'w-full'
-                          : 'w-0 group-hover:w-full'
-                      }`}
-                    />
-
-                  </a>
-                )
-              })}
-
-            </nav>
 
             {/* CTA DESKTOP */}
             <div className="hidden md:block w-fit shrink-0">
@@ -145,18 +169,20 @@ export default function Navbar() {
 
             {/* MOBILE MENU BUTTON */}
             <button
-  onClick={() => setMenuOpen(!menuOpen)}
-  className="
-  md:hidden
-  text-white
-  text-2xl
-  h-[40px]
-  flex
-  items-center
-  justify-center
-  "
->
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="
+              md:hidden
+              text-white
+              text-2xl
+              h-[40px]
+              flex
+              items-center
+              justify-center
+              "
+            >
+
               {menuOpen ? '✕' : '☰'}
+
             </button>
 
           </div>
