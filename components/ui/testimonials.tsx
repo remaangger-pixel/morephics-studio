@@ -42,17 +42,18 @@ export default function Testimonials() {
 
   return (
 
-    <section className="px-4 py-6 bg-[#050505] overflow-visible">
+    <section className="px-0 md:px-4 py-0 md:py-6 bg-[#050505] overflow-visible">
 
       <div
         className="
-        rounded-[42px]
+        rounded-none md:rounded-[42px]
         border
         border-white/10
         bg-[#0B0B0B]
-        px-10
+        px-4
         md:px-16
-        py-24
+        py-12
+        md:py-24
         overflow-visible
         "
       >
@@ -97,7 +98,8 @@ export default function Testimonials() {
 
             <h2
               className="
-              text-[52px]
+              text-[36px]
+              sm:text-[48px]
               md:text-[92px]
               leading-[0.92]
               tracking-[-0.06em]
@@ -112,7 +114,7 @@ export default function Testimonials() {
               Worldwide
             </h2>
 
-            <p className="text-xl text-white/50 leading-relaxed max-w-xl">
+            <p className="text-base md:text-xl text-white/50 leading-relaxed max-w-xl">
               From fashion campaigns to product launches,
               brands use our AI visuals to create cinematic
               experiences that stand out instantly.
@@ -130,11 +132,12 @@ export default function Testimonials() {
                 <div
                   key={index}
                   className="
-                  rounded-[24px]
+                  rounded-[18px]
+                  md:rounded-[24px]
                   border
                   border-white/10
                   bg-white/[0.03]
-                  p-5
+                  p-4 md:p-5
                   "
                 >
 
@@ -171,9 +174,13 @@ export default function Testimonials() {
 
               <motion.div
                 key={testimonial.name}
-                className="sticky w-full"
+                className="md:sticky w-full"
                 style={{
-                  top: `${40 + index * 28}px`,
+                top:
+                  typeof window !== 'undefined' &&
+                  window.innerWidth >= 768
+                  ? `${40 + index * 28}px`
+                   : '0px',
                 }}
               >
 
@@ -191,12 +198,13 @@ export default function Testimonials() {
                   className="
                   relative
                   overflow-hidden
-                  rounded-[32px]
+                  rounded-[22px]
+                  md:rounded-[32px]
                   border
                   border-white/10
                   bg-white/[0.04]
                   backdrop-blur-xl
-                  p-8
+                  p-5 md:p-8
                   shadow-[0_20px_80px_rgba(0,0,0,0.45)]
                   "
                 >
@@ -259,7 +267,7 @@ export default function Testimonials() {
                     </div>
 
                     {/* QUOTE */}
-                    <p className="text-2xl leading-relaxed text-white/75">
+                    <p className="text-lg md:text-2xl leading-relaxed text-white/75">
                       “{testimonial.quote}”
                     </p>
 

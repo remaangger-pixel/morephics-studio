@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 
 import Navbar from '@/components/ui/navbar'
 import FooterColumn from '@/components/ui/footer-column'
+import Image from 'next/image'
 
 import { projects } from '../../data/projects'
 
@@ -31,75 +32,120 @@ export default function ExploreWorkPage() {
       <Navbar />
 
       {/* HERO */}
-      <section className="px-4 pt-4 pb-6">
+<section className="px-0 md:px-4 pt-0 md:pt-4 pb-0 md:pb-6">
 
-        <div
-          className="
-          rounded-[42px]
-          overflow-hidden
-          border
-          border-white/10
-          bg-[#0B0B0B]
-          px-8
-          md:px-16
-          py-20
-          "
-        >
+  <div
+    className="
+    relative
+    rounded-none md:rounded-[42px]
+    overflow-hidden
+    border
+    border-white/10
+    min-h-[62vh]
+    md:min-h-[78vh]
+    flex
+    items-end
+    "
+  >
 
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 40,
-            }}
+    {/* BACKGROUND IMAGE */}
 
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
+    <Image
+      src="/hero-3.png"
+      alt="Explore Work Hero"
+      fill
+      priority
+      sizes="100vw"
+      className="
+      object-cover
+      object-center
+      "
+    />
 
-            transition={{
-              duration: 1,
-            }}
-          >
+    {/* DARK OVERLAY */}
 
-            <p className="text-[#FF6B00] text-xl md:text-2xl font-semibold mb-8">
-              Explore Projects
-            </p>
+    <div
+      className="
+      absolute
+      inset-0
+      bg-black/55
+      "
+    />
 
-            <h1
-              className="
-              text-[52px]
-              md:text-[110px]
-              leading-[0.9]
-              tracking-[-0.06em]
-              font-bold
-              text-white
-              max-w-[1100px]
-              "
-            >
-              A curated collection
-              <br />
-              of AI visuals, cinematic
-              <br />
-              campaigns & motion content.
-            </h1>
+    {/* CINEMATIC GLOW */}
 
-          </motion.div>
+    <div
+      className="
+      absolute
+      inset-0
+      bg-[radial-gradient(circle_at_bottom_left,rgba(255,107,0,0.22),transparent_40%)]
+      "
+    />
 
-        </div>
+    <motion.div
+      className="
+      relative
+      z-10
+      px-4
+      md:px-16
+      py-14
+      md:py-20
+      "
+      initial={{
+        opacity: 0,
+        y: 40,
+      }}
 
-      </section>
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+
+      transition={{
+        duration: 1,
+      }}
+    >
+
+      <p className="text-[#FF6B00] text-xl md:text-2xl font-semibold mb-8">
+        Explore Projects
+      </p>
+
+      <h1
+        className="
+        text-[38px]
+        sm:text-[48px]
+        md:text-[110px]
+        leading-[0.9]
+        tracking-[-0.06em]
+        font-bold
+        text-white
+        max-w-[1100px]
+        "
+      >
+        A curated collection
+        <br />
+        of AI visuals, cinematic
+        <br />
+        campaigns & motion content.
+      </h1>
+
+    </motion.div>
+
+  </div>
+
+</section>
 
       {/* IMAGE PROJECTS */}
-      <section className="px-4 py-6">
+      <section className="px-0 md:px-4 py-0 md:py-6">
 
         <div
           className="
-          rounded-[42px]
+          rounded-none md:rounded-none md:rounded-[42px]
           bg-[#F3F3F3]
-          px-8
+          px-4
           md:px-16
-          py-20
+          py-12
+          md:py-20
           "
         >
 
@@ -111,7 +157,8 @@ export default function ExploreWorkPage() {
 
             <h2
               className="
-              text-[44px]
+              text-[34px]
+              sm:text-[42px]
               md:text-[72px]
               leading-[0.92]
               tracking-[-0.06em]
@@ -125,7 +172,7 @@ export default function ExploreWorkPage() {
           </div>
 
           {/* PROJECT GRID */}
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
 
             {projects.map((project, index) => (
 
@@ -167,7 +214,7 @@ export default function ExploreWorkPage() {
                     className="
                     relative
                     overflow-hidden
-                    rounded-[32px]
+                    rounded-[22px] md:rounded-[32px]
                     aspect-[0.82]
                     "
                   >
@@ -190,13 +237,13 @@ export default function ExploreWorkPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
 
                     {/* CONTENT */}
-                    <div className="absolute bottom-0 left-0 right-0 p-8 z-10">
+                    <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8 z-10">
 
                       <p className="text-[#FF6B00] text-sm uppercase tracking-[0.2em] mb-3">
                         {project.category}
                       </p>
 
-                      <h3 className="text-white text-3xl font-semibold leading-tight">
+                      <h3 className="text-white text-2xl md:text-3xl font-semibold leading-tight">
                         {project.title}
                       </h3>
 
@@ -217,17 +264,18 @@ export default function ExploreWorkPage() {
       </section>
 
       {/* VIDEO PROJECTS */}
-      <section className="px-4 py-6">
+      <section className="px-0 md:px-4 py-0 md:py-6">
 
         <div
           className="
-          rounded-[42px]
+          rounded-none md:rounded-[42px]
           border
           border-white/10
           bg-[#0B0B0B]
-          px-8
+          px-4
           md:px-16
-          py-20
+          py-12
+          md:py-20
           "
         >
 
@@ -239,7 +287,8 @@ export default function ExploreWorkPage() {
 
             <h2
               className="
-              text-[44px]
+              text-[34px]
+              sm:text-[42px]
               md:text-[72px]
               leading-[0.92]
               tracking-[-0.06em]
@@ -283,7 +332,8 @@ export default function ExploreWorkPage() {
                 className="
                 relative
                 overflow-hidden
-                rounded-[32px]
+                rounded-[22px]
+                md:rounded-[32px]
                 border
                 border-white/10
                 bg-white/[0.03]
@@ -305,7 +355,7 @@ export default function ExploreWorkPage() {
                 />
 
                 {/* CONTENT */}
-                <div className="p-6">
+                <div className="p-4 md:p-6">
 
                   <h3 className="text-white text-2xl font-semibold">
                     {video.title}

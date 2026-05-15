@@ -6,7 +6,7 @@ export const projects = [
 
     category: 'AI Visual Direction',
 
-    cover: '/gallery1.png',
+    cover: '/gallery1-1.png',
 
     description:
       'A cinematic AI-driven fashion campaign crafted for luxury branding and modern editorial storytelling.',
@@ -21,7 +21,7 @@ export const projects = [
       'Using AI-enhanced art direction, dramatic lighting, editorial framing, and carefully controlled color grading, the project was designed to create a visually immersive experience. Each composition was refined to feel intentional, luxurious, and emotionally cinematic.',
 
     layoutImages: {
-      hero: '/gallery1.png',
+      hero: '/gallery2-1.png',
 
       challenge: '/gallery2.png',
 
@@ -61,7 +61,7 @@ export const projects = [
 
     category: 'AI Advertising',
 
-    cover: '/gallery2.png',
+    cover: '/gallery2-1.png',
 
     description:
       'Premium beauty campaign designed using AI-enhanced cinematic visuals and modern fashion aesthetics.',
@@ -113,7 +113,7 @@ export const projects = [
 
     category: 'Creative Automation',
 
-    cover: '/gallery3.png',
+    cover: '/gallery3-1.png',
 
     description:
       'Editorial portrait exploration blending cinematic AI rendering with modern luxury aesthetics.',
@@ -128,7 +128,7 @@ export const projects = [
       'Using AI-assisted composition and editorial framing techniques, the project creates expressive and visually immersive portrait experiences.',
 
     layoutImages: {
-      hero: '/gallery3.png',
+      hero: '/gallery5-1.png',
 
       challenge: '/gallery1.png',
 
@@ -165,7 +165,7 @@ export const projects = [
 
     category: 'Brand Campaign',
 
-    cover: '/gallery4.png',
+    cover: '/gallery4-1.png',
 
     description:
       'Commercial AI product visuals focused on premium composition, lighting, and cinematic storytelling.',
@@ -217,7 +217,7 @@ export const projects = [
 
     category: 'AI Creative System',
 
-    cover: '/gallery5.png',
+    cover: '/gallery5-1.png',
 
     description:
       'Lifestyle-focused visual storytelling combining cinematic direction with AI-powered creative systems.',

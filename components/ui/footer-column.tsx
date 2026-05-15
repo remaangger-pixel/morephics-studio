@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 
 import {
   Mail,
@@ -39,61 +40,106 @@ const socialLinks = [
 
 const footerLinks = {
   navigation: [
-    'Home',
-    'Projects',
-    'Pricing',
-    'Testimonials',
-  ],
+  {
+    label: 'Home',
+    href: '/',
+  },
+
+  {
+    label: 'Projects',
+    href: '/#projects',
+  },
+
+  {
+    label: 'Pricing',
+    href: '/#pricing',
+  },
+
+  {
+    label: 'Testimonials',
+    href: '/#testimonials',
+  },
+
+  {
+    label: 'Contact',
+    href: '/contact',
+  },
+],
 
   services: [
-    'AI Product Visuals',
-    'Creative Direction',
-    'AI Campaigns',
-    'Brand Content',
+    'AI Image Editorial',
+    'AI Visual Ads',
+    'AI Commercial Campaign',
+    'AI Visual Course',
   ],
 
   contact: [
-    'hello@aistudio.com',
+    'morephics@mail.com',
     '+62 812-3456-7890',
-    'Jakarta, Indonesia',
+    'Pontianak, Indonesia',
   ],
 }
 
 export default function FooterColumn() {
   return (
-    <footer className="bg-[#050505] px-4 py-6">
+    <footer className="bg-[#050505] px-0 md:px-4 py-0 md:py-6">
 
-      <div className="rounded-[42px] border border-white/10 bg-[#0B0B0B] overflow-hidden">
+      <div className="rounded-none md:rounded-[42px] border border-white/10 bg-[#0B0B0B] overflow-hidden">
 
         {/* TOP */}
-        <div className="px-10 md:px-16 pt-24 pb-20">
+        <div className="px-4 md:px-16 pt-14 md:pt-24 pb-12 md:pb-20">
 
-          <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-20">
+          <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 md:gap-20">
 
             {/* LEFT */}
-            <div>
+<div>
 
-              <p className="text-[#FF6B00] text-2xl md:text-3xl font-semibold mb-8">
-                Let’s Build Something Cinematic
-              </p>
+  <p className="text-[#FF6B00] text-xl md:text-3xl font-semibold mb-10">
+    Let’s Build Something
+  </p>
 
-              <h2 className="text-[58px] md:text-[110px] leading-[0.9] tracking-[-0.07em] font-bold text-white mb-10">
-                Morephics
-                <br />
-                For Modern
-                <br />
-                Brands
-              </h2>
+  {/* LOGO */}
 
-              <p className="text-white/50 text-xl leading-relaxed max-w-xl">
-                We craft premium AI visuals, campaigns, and cinematic content
-                designed for brands that want to stand out.
-              </p>
+  <div className="mb-10">
 
-            </div>
+    <Image
+      src="/logo.png"
+      alt="Morephics"
+      width={320}
+      height={100}
+      priority
+      className="
+      w-[180px]
+      md:w-[320px]
+      h-auto
+      object-contain
+      "
+    />
+
+  </div>
+
+  {/* DESCRIPTION */}
+
+  <p
+    className="
+    text-white/50
+    text-sm
+    md:text-xl
+    leading-[1.7]
+    md:leading-[1.9]
+    max-w-xl
+    "
+  >
+    We craft premium AI visuals, campaigns,
+    and cinematic content designed for modern
+    brands, creators, and luxury products that
+    want to stand out in the digital world.
+  </p>
+
+</div>
 
             {/* RIGHT */}
-            <div className="grid sm:grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-10">
 
               {/* NAVIGATION */}
               <div>
@@ -106,10 +152,10 @@ export default function FooterColumn() {
 
                   {footerLinks.navigation.map((item) => (
 
-                    <li key={item}>
+                    <li key={item.label}>
 
                       <Link
-                        href="#"
+                        href={item.href}
                         className="
                         text-white/40
                         hover:text-[#FF6B00]
@@ -117,7 +163,7 @@ export default function FooterColumn() {
                         duration-300
                         "
                       >
-                        {item}
+                        {item.label}
                       </Link>
 
                     </li>
@@ -162,47 +208,47 @@ export default function FooterColumn() {
               </div>
 
               {/* CONTACT */}
-              <div>
+<div>
 
-                <h3 className="text-white text-lg font-semibold mb-6">
-                  Contact
-                </h3>
+  <h3 className="text-white text-lg font-semibold mb-6">
+    Contact
+  </h3>
 
-                <ul className="space-y-5">
+  <ul className="space-y-5">
 
-                  <li className="flex items-center gap-3">
+    <li className="flex items-center gap-3">
 
-                    <Mail className="w-5 h-5 text-[#FF6B00] shrink-0" />
+      <Mail className="w-5 h-5 text-[#FF6B00] shrink-0" />
 
-                    <span className="text-white/50 whitespace-nowrap">
-                      {footerLinks.contact[0]}
-                    </span>
+      <span className="text-white/50">
+        {footerLinks.contact[0]}
+      </span>
 
-                  </li>
+    </li>
 
-                  <li className="flex items-center gap-3">
+    <li className="flex items-center gap-3">
 
-                    <Phone className="w-5 h-5 text-[#FF6B00] shrink-0" />
+      <Phone className="w-5 h-5 text-[#FF6B00] shrink-0" />
 
-                    <span className="text-white/50 whitespace-nowrap">
-                      {footerLinks.contact[1]}
-                    </span>
+      <span className="text-white/50">
+        {footerLinks.contact[1]}
+      </span>
 
-                  </li>
+    </li>
 
-                  <li className="flex items-center gap-3">
+    <li className="flex items-center gap-3">
 
-                    <MapPin className="w-5 h-5 text-[#FF6B00] shrink-0" />
+      <MapPin className="w-5 h-5 text-[#FF6B00] shrink-0" />
 
-                    <span className="text-white/50 whitespace-nowrap">
-                      {footerLinks.contact[2]}
-                    </span>
+      <span className="text-white/50">
+        {footerLinks.contact[2]}
+      </span>
 
-                  </li>
+    </li>
 
-                </ul>
+  </ul>
 
-              </div>
+</div>
 
             </div>
 
@@ -211,7 +257,7 @@ export default function FooterColumn() {
         </div>
 
         {/* BOTTOM */}
-        <div className="border-t border-white/10 px-10 md:px-16 py-8">
+        <div className="border-t border-white/10 px-4 md:px-16 py-6 md:py-8">
 
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
 
@@ -221,43 +267,45 @@ export default function FooterColumn() {
             </p>
 
             {/* SOCIAL */}
-            <div className="flex items-center gap-4">
+<div className="flex items-center gap-4">
 
-              {socialLinks.map(({ icon: Icon, href }, index) => (
+  {socialLinks.map(({ icon: Icon, href }, index) => (
 
-                <Link
-                  key={index}
-                  href={href}
-                  className="
-                  w-11
-                  h-11
-                  rounded-full
-                  border
-                  border-white/10
-                  bg-white/[0.03]
-                  flex
-                  items-center
-                  justify-center
-                  text-white/60
-                  hover:bg-[#FF6B00]
-                  hover:text-white
-                  hover:border-[#FF6B00]
-                  transition-all
-                  duration-300
-                  "
-                >
+    <Link
+      key={index}
+      href={href}
+      className="
+      w-10
+      h-10
+      md:w-11
+      md:h-11
+      rounded-full
+      border
+      border-white/10
+      bg-white/[0.03]
+      flex
+      items-center
+      justify-center
+      text-white/60
+      hover:bg-[#FF6B00]
+      hover:text-white
+      hover:border-[#FF6B00]
+      transition-all
+      duration-300
+      "
+    >
 
-                  <Icon className="w-5 h-5" />
+      <Icon className="w-5 h-5" />
 
-                </Link>
+    </Link>
 
-              ))}
+  ))}
 
-            </div>
-
-          </div>
+</div>
 
         </div>
+
+      </div>
 
       </div>
 

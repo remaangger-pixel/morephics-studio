@@ -7,6 +7,7 @@ import { motion } from 'framer-motion'
 
 import Navbar from '@/components/ui/navbar'
 import { FlowButton } from '@/components/ui/flow-button'
+import BookShowcase from '@/components/ui/book-showcase'
 
 const Pricing = dynamic(() => import('@/components/ui/pricing'), {
   loading: () => <div className="h-[400px]" />,
@@ -31,7 +32,7 @@ export default function Page() {
       {/* HERO SECTION */}
       <section
         id="home"
-        className="relative min-h-screen px-4 pt-4 overflow-hidden"
+        className="relative min-h-screen px-0 md:px-4 pt-0 md:pt-4 overflow-hidden"
       >
 
         <motion.div
@@ -52,7 +53,7 @@ export default function Page() {
           className="
           relative
           overflow-hidden
-          rounded-[42px]
+          rounded-none md:rounded-[42px]
           min-h-[96vh]
           border
           border-white/10
@@ -75,7 +76,7 @@ export default function Page() {
           >
 
             <Image
-              src="/hero.png"
+              src="/hero-2.png"
               alt="Hero"
               fill
               className="object-cover object-center"
@@ -101,7 +102,7 @@ export default function Page() {
             flex-col
             justify-between
             min-h-[96vh]
-            p-8
+            p-4
             md:p-14
             lg:p-20
             "
@@ -137,7 +138,7 @@ export default function Page() {
                   mb-8
                   "
                 >
-                  Hey, I&apos;m
+                  Hey, we are
                 </motion.p>
 
                 <motion.h1
@@ -157,7 +158,8 @@ export default function Page() {
                   }}
 
                   className="
-                  text-[72px]
+                  text-[52px]
+                  sm:text-[64px]
                   md:text-[160px]
                   leading-[0.82]
                   tracking-[-0.06em]
@@ -253,10 +255,10 @@ export default function Page() {
             >
 
               {[
-                'AI Product Photography',
-                'AI Advertising Visuals',
-                'Creative Automation',
-                'AI Content Systems',
+                'AI Image Editorial',
+                'AI Visual Ads',
+                'AI Commercial Campaign',
+                'AI Visual Course',
               ].map((item, index) => (
 
                 <div key={index}>
@@ -298,90 +300,106 @@ export default function Page() {
       </section>
 
       {/* TRUSTED BRANDS */}
-      <section className="px-4 py-6 bg-[#050505]">
+<section className="px-0 md:px-4 py-0 md:py-8 bg-[#050505]">
 
-        <div className="rounded-[42px] bg-[#F3F3F3] py-14 overflow-hidden border border-black/5">
+  <div className="rounded-none md:rounded-[42px] bg-[#F3F3F3] py-10 overflow-hidden border border-black/5">
 
-          <div className="flex items-center">
+    <div className="flex items-center">
 
-            <div className="min-w-[320px] px-12 z-10 bg-[#F3F3F3]">
+      {/* LEFT TEXT */}
+      <div className="hidden md:block min-w-[320px] px-12 z-10 bg-[#F3F3F3]">
 
-              <p className="text-black text-xl leading-tight font-medium">
-                Trusted by brands I’ve
-                <br />
-                helped shape
-              </p>
+        <p className="text-black text-xl leading-tight font-medium">
+          Trusted by brands I’ve
+          <br />
+          helped shape
+        </p>
 
-            </div>
+      </div>
 
-            <div className="relative overflow-hidden flex-1">
+      {/* LOGO MARQUEE */}
+      <div className="relative overflow-hidden flex-1">
 
-              <div
+        <div
+          className="
+          flex
+          items-center
+          gap-10 md:gap-24
+          whitespace-nowrap
+          animate-logo-marquee
+          min-w-max
+          "
+        >
+
+          {[
+            '/logo-black1.png',
+            '/logo-black2.png',
+            '/logo-black3.png',
+            '/logo-black4.png',
+            '/logo-black5.png',
+
+            '/logo-black1.png',
+            '/logo-black2.png',
+            '/logo-black3.png',
+            '/logo-black4.png',
+            '/logo-black5.png',
+          ].map((logo, index) => (
+
+            <div
+              key={index}
+              className="
+              flex
+              items-center
+              justify-center
+              min-w-[180px]
+              h-[70px]
+              "
+            >
+
+              <Image
+                src={logo}
+                alt={`Brand ${index + 1}`}
+                width={180}
+                height={70}
                 className="
-                flex
-                items-center
-                gap-24
-                whitespace-nowrap
-                animate-logo-marquee
-                min-w-max
+                w-auto
+                h-[200px]
+                md:h-[200px]
+                object-contain
+                opacity-60
+                grayscale
+                hover:grayscale-0
+                hover:opacity-100
+                transition-all
+                duration-500
                 "
-              >
-
-                {[
-                  'Ship Blox',
-                  'Supa Blox',
-                  'Hype Blox',
-                  'Ultra Blox',
-                  'Frame Blox',
-                  'Nova Studio',
-                  'Pixel Lab',
-                  'Vision Flow',
-
-                  'Ship Blox',
-                  'Supa Blox',
-                  'Hype Blox',
-                  'Ultra Blox',
-                  'Frame Blox',
-                  'Nova Studio',
-                  'Pixel Lab',
-                  'Vision Flow',
-                ].map((brand, index) => (
-
-                  <div
-                    key={index}
-                    className="
-                    text-black/80
-                    text-4xl
-                    font-semibold
-                    tracking-[-0.05em]
-                    "
-                  >
-                    {brand}
-                  </div>
-
-                ))}
-
-              </div>
+              />
 
             </div>
 
-          </div>
+          ))}
 
         </div>
 
-      </section>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
       {/* PROJECTS */}
 <section
   id="projects"
-  className="px-4 py-6 bg-[#050505]"
+  className="px-0 md:px-4 py-0 md:py-3 bg-[#050505]"
 >
 
   <div
     className="
-    rounded-[42px]
+    rounded-none md:rounded-[42px]
     bg-[#F3F3F3]
-    px-8
+    px-3
     md:px-16
     py-20
     md:py-24
@@ -510,13 +528,14 @@ export default function Page() {
     </div>
 
           {/* EXPANDING GALLERY */}
+{/* EXPANDING GALLERY */}
 <div
   className="
-  flex
-  flex-col
-  md:flex-row
+  grid
+  grid-cols-1
+  md:flex
   items-stretch
-  gap-4
+  gap-2 md:gap-4
   h-auto
   md:h-[520px]
   w-full
@@ -524,82 +543,166 @@ export default function Page() {
 >
 
   {[
-    '/gallery1.png',
-    '/gallery2.png',
-    '/gallery3.png',
-    '/gallery4.png',
-    '/gallery5.png',
-  ].map((src, idx) => (
+  {
+    image: '/gallery1-1.png',
+    logo: '/logo-white1.png',
+  },
 
-    <motion.div
-      key={idx}
+  {
+    image: '/gallery2-1.png',
+    logo: '/logo-white2.png',
+  },
 
-      initial={{
-        flex: 1,
-      }}
+  {
+    image: '/gallery3-1.png',
+    logo: '/logo-white3.png',
+  },
 
-      whileHover={{
-        flex: 3.5,
-      }}
+  {
+    image: '/gallery4-1.png',
+    logo: '/logo-white4.png',
+  },
 
-      transition={{
-        duration: 0.65,
-        ease: [0.22, 1, 0.36, 1],
-      }}
+  {
+    image: '/gallery5-1.png',
+    logo: '/logo-white5.png',
+  },
+].map((item, idx) => (
 
+  <motion.div
+    key={idx}
+
+    initial={{
+  opacity: 0,
+  y: 40,
+  flex: 1,
+}}
+
+whileInView={{
+  opacity: 1,
+  y: 0,
+}}
+
+viewport={{
+  once: true,
+  amount: 0.2,
+}}
+
+    whileHover={
+  typeof window !== 'undefined' && window.innerWidth >= 768
+    ? { flex: 3.5 }
+    : {}
+}
+
+    transition={{
+      duration: 0.65,
+      ease: [0.22, 1, 0.36, 1],
+    }}
+
+    className="
+    group
+    relative
+    rounded-[28px]
+    overflow-hidden
+    h-[320px]
+    md:h-full
+    w-full
+    md:min-w-[80px]
+    "
+  >
+
+    {/* IMAGE */}
+    <Image
+      src={item.image}
+      alt={`Gallery ${idx + 1}`}
+      fill
       className="
-      group
-      relative
-      rounded-[28px]
-      overflow-hidden
-      h-[420px]
-      md:h-full
-      min-w-[80px]
+      object-cover
+      transition-transform
+      duration-700
+      scale-[1.02]
+      md:scale-100
+      md:group-hover:scale-[1.03]
+      "
+      sizes="(max-width: 768px) 100vw, 50vw"
+    />
+
+    {/* OVERLAY */}
+    <div
+      className="
+      absolute
+      inset-0
+      bg-gradient-to-t
+      from-black/55
+      via-black/10
+      to-transparent
+      "
+    />
+
+    {/* GLOW */}
+    <div
+      className="
+      absolute
+      inset-0
+      opacity-0
+      group-hover:opacity-100
+      transition-opacity
+      duration-500
+      bg-[radial-gradient(circle_at_bottom,rgba(255,107,0,0.22),transparent_45%)]
+      "
+    />
+
+    {/* HOVER BRAND OVERLAY */}
+    <div
+      className="
+      absolute
+      inset-0
+      bg-black/30
+      backdrop-blur-[2px]
+      opacity-100
+      md:opacity-0
+      md:group-hover:opacity-100
+      transition-all
+      duration-500
+      flex
+      items-center
+      justify-center
       "
     >
 
-      {/* IMAGE */}
-      <Image
-        src={src}
-        alt={`Gallery ${idx + 1}`}
-        fill
-        className="
-        object-cover
-        transition-transform
-        duration-700
-        group-hover:scale-[1.03]
-        "
-        sizes="(max-width: 768px) 100vw, 50vw"
-      />
-
-      {/* OVERLAY */}
       <div
         className="
-        absolute
-        inset-0
-        bg-gradient-to-t
-        from-black/55
-        via-black/10
-        to-transparent
-        "
-      />
-
-      {/* GLOW */}
-      <div
-        className="
-        absolute
-        inset-0
-        opacity-0
-        group-hover:opacity-100
-        transition-opacity
+        transition-all
         duration-500
-        bg-[radial-gradient(circle_at_bottom,rgba(255,107,0,0.22),transparent_45%)]
+        scale-100
+        opacity-100
+        md:scale-90
+        md:opacity-0
+        md:group-hover:scale-100
+        md:group-hover:opacity-100
         "
-      />
+      >
 
-    </motion.div>
+        <Image
+          src={item.logo}
+          alt={`Client Logo ${idx + 1}`}
+          width={220}
+          height={80}
+          className="
+          w-[240px]
+          md:w-[320px]
+          h-auto
+          object-contain
+          "
+        />
 
-  ))}
+      </div>
+
+    </div>
+
+  </motion.div>
+
+))}
 
 </div>
 
@@ -607,20 +710,25 @@ export default function Page() {
 
       </section>
 
-      {/* PRICING */}
-      <section id="pricing">
-        <Pricing />
-      </section>
+      {/* BOOK SHOWCASE */}
+<section id="resources">
+  <BookShowcase />
+</section>
 
-      {/* TESTIMONIALS */}
-      <div id="testimonials">
-        <Testimonials />
-      </div>
+{/* PRICING */}
+<section id="pricing">
+  <Pricing />
+</section>
 
-      {/* CONTACT */}
-      <section id="contact">
-        <FooterColumn />
-      </section>
+{/* TESTIMONIALS */}
+<div id="testimonials">
+  <Testimonials />
+</div>
+
+{/* CONTACT */}
+<section id="contact">
+  <FooterColumn />
+</section>
 
     </main>
   )

@@ -73,14 +73,18 @@ export default function ContactPage() {
       <Navbar />
 
       {/* HERO */}
-      <section className="px-4 pt-4 pb-6">
+      <section className="px-0 md:px-4 pt-0 md:pt-4 pb-0 md:pb-6">
 
         <div
           className="
           relative
           overflow-hidden
-          rounded-[42px]
-          min-h-[760px]
+          rounded-none md:rounded-[42px]
+          h-[520px]
+          md:min-h-[760px]
+          flex
+          flex-col
+          justify-end
           border
           border-white/10
           "
@@ -88,7 +92,7 @@ export default function ContactPage() {
 
           {/* BG */}
           <img
-            src="/hero.png"
+            src="/hero-2.png"
             alt=""
             className="
             absolute
@@ -96,6 +100,9 @@ export default function ContactPage() {
             w-full
             h-full
             object-cover
+            object-center
+            md:object-center
+            object-[55%]
             "
           />
 
@@ -113,13 +120,15 @@ export default function ContactPage() {
             flex
             flex-col
             justify-end
-            px-8
+            px-4
             md:px-16
-            py-14
+            pt-10
+            pb-6
+            md:py-14
             "
           >
 
-            <div className="grid lg:grid-cols-2 gap-16 items-end">
+            <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center md:items-end">
 
               <div>
 
@@ -129,7 +138,8 @@ export default function ContactPage() {
 
                 <h1
                   className="
-                  text-[64px]
+                  text-[44px]
+                  sm:text-[56px]
                   md:text-[140px]
                   leading-[0.88]
                   tracking-[-0.08em]
@@ -147,7 +157,8 @@ export default function ContactPage() {
                 <p
                   className="
                   text-white
-                  text-2xl
+                  text-lg
+                  sm:text-xl
                   md:text-[42px]
                   leading-tight
                   tracking-[-0.04em]
@@ -169,19 +180,20 @@ export default function ContactPage() {
       </section>
 
       {/* CONTACT */}
-      <section className="px-4 py-6">
+      <section className="px-0 md:px-4 py-0 md:py-6">
 
         <div
           className="
-          rounded-[42px]
+          rounded-none md:rounded-[42px]
           bg-[#F3F3F3]
-          px-8
+          px-4
           md:px-16
-          py-20
+          py-12
+          md:py-20
           "
         >
 
-          <div className="grid lg:grid-cols-2 gap-24 items-start">
+          <div className="grid lg:grid-cols-2 gap-14 md:gap-24 items-start">
 
             {/* LEFT */}
             <div>
@@ -192,8 +204,9 @@ export default function ContactPage() {
 
               <h2
                 className="
-                text-[52px]
-                md:text-[82px]
+                text-[36px]
+                sm:text-[46px]
+                md:text-[82px]    
                 leading-[0.92]
                 tracking-[-0.06em]
                 font-bold
@@ -205,7 +218,7 @@ export default function ContactPage() {
                 Let’s Create Something Powerful
               </h2>
 
-              <p className="text-black/75 text-2xl leading-relaxed font-medium max-w-[560px] mb-10">
+              <p className="text-black/75 text-lg md:text-2xl leading-relaxed font-medium max-w-[560px] mb-10">
                 Whether you need AI visuals, cinematic campaigns, or premium branding content — I’m here to help bring your vision to life.
               </p>
 
@@ -278,9 +291,9 @@ export default function ContactPage() {
             {/* RIGHT */}
             <div
               className="
-              rounded-[36px]
+              rounded-[24px] md:rounded-[36px]
               bg-[#ECEAE8]
-              p-8
+              p-5
               md:p-10
               "
             >
@@ -301,7 +314,8 @@ export default function ContactPage() {
                     }
                     className="
                     w-full
-                    h-14
+                    h-12
+                    md:h-14
                     rounded-full
                     border
                     border-black/10
@@ -362,7 +376,8 @@ export default function ContactPage() {
                   }
                   className="
                   w-full
-                  h-[200px]
+                  h-[160px]
+                  md:h-[200px]
                   rounded-[28px]
                   border
                   border-black/10
@@ -446,11 +461,13 @@ export default function ContactPage() {
             relative
             w-full
             max-w-[520px]
-            rounded-[36px]
+            rounded-[24px]
+            md:rounded-[36px]
             border
             border-white/10
             bg-[#0B0B0B]
-            p-10
+            p-6
+            md:p-10
             overflow-hidden
             "
           >
